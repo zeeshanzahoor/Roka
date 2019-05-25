@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2751D764-F425-4CC9-8879-5FF6F8EE8516}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ArtifexPay.Boot</RootNamespace>
+    <AssemblyName>ArtifexPay.Boot</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=4.8.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.8.1\lib\net45\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bootstraper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Audit\ArtifexPay.Core.Audit\ArtifexPay.Core.Audit.csproj">
+      <Project>{4e352131-a8f8-43ab-b19e-38bd39c03b69}</Project>
+      <Name>ArtifexPay.Core.Audit</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core\Cache\ArtifexPay.Core.Cache\ArtifexPay.Core.Cache.csproj">
+      <Project>{5d17c3fd-ff35-441b-ab7d-60a3829a70df}</Project>
+      <Name>ArtifexPay.Core.Cache</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core\Data\ArtifexPay.Core.Data\ArtifexPay.Core.Data.csproj">
+      <Project>{d50ba341-6b3a-43de-8cf2-448d794819b4}</Project>
+      <Name>ArtifexPay.Core.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core\Exception\ArtifexPay.Core.Exception\ArtifexPay.Core.Exception.csproj">
+      <Project>{0895e9eb-a4ee-4131-8081-ff46f8e6a5c1}</Project>
+      <Name>ArtifexPay.Core.Exception</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core\Security\ArtifexPay.Core.Security\ArtifexPay.Core.Security.csproj">
+      <Project>{075fe135-e697-4c92-a655-8567f9f55b8b}</Project>
+      <Name>ArtifexPay.Core.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Services\ArtifexPay.Services\ArtifexPay.Services.csproj">
+      <Project>{89c19c2d-7edb-4cb1-8fc9-dd0529d07784}</Project>
+      <Name>ArtifexPay.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

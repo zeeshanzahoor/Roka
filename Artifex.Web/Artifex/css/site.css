@@ -1,0 +1,9 @@
+
+.k-grid-content-locked table, .k-grid-content table {
+    table-layout: inherit !important;
+    width: 100% !important;
+}
+
+body {
+    margin: 0px;
+}

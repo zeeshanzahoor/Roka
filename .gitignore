@@ -1,0 +1,4 @@
+packages/
+Artifex.Web/node_modules/
+bin
+obj
